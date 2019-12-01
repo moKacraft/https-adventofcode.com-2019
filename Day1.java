@@ -1,5 +1,4 @@
 public class Day1{
-
      public static void main(String []args){
         java.util.Scanner input = new java.util.Scanner(System.in);
         int anwser = 0;
@@ -14,6 +13,5 @@ public class Day1{
             }
         }
          System.out.println(anwser);
-     }
-     
+     } 
 }
