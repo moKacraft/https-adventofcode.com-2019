@@ -1,18 +1,19 @@
 public class Day1{
 
      public static void main(String []args){
-        java.util.Scanner in = new java.util.Scanner(System.in);
-        int res = 0;
-        while (in.hasNextInt()) {
-            int r = (in.nextInt()/3)-2;
-            res+=r;
-            while (r > 0) {
-                r = r/3-2;
-                if (r > 0) {
-                    res+=r;
+        java.util.Scanner input = new java.util.Scanner(System.in);
+        int anwser = 0;
+        while (input.hasNextInt()) {
+            int nextInt = input.nextInt()/3-2;
+            anwser += nextInt;
+            while (nextInt > 0) {
+                nextInt = nextInt/3-2;
+                if (nextInt > 0) {
+                    anwser += nextInt;
                 }
             }
         }
-         System.out.println("res: " + res);
+         System.out.println(anwser);
      }
+     
 }
