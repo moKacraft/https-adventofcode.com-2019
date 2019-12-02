@@ -1,5 +1,11 @@
 public class Day2 {
 
+	static final int NOUN_MAX = 99;
+	static final int NOUN_REPLACE = 12;
+	static final int VERB_MAX = 99;
+	static final int VERB_REPLACE = 2;
+	static final int OUTPUT_TO_FIND = 19690720;
+
 	public static void main(String[] args) {
 		java.util.Scanner input = new java.util.Scanner(System.in);
 		input.useDelimiter("\\D");
@@ -7,11 +13,10 @@ public class Day2 {
 		while (input.hasNextInt()) {
 			values.add(input.nextInt());
 		}
+		input.close();
 
-		for (int noun = 12; noun < 99; noun++) {
-			for (int verb = 2; verb < 99; verb++) {
-				System.out.println(noun + " : " + verb);
-
+		for (int noun = NOUN_REPLACE; noun < NOUN_MAX; noun++) {
+			for (int verb = VERB_REPLACE; verb < VERB_MAX; verb++) {
 				Integer[] valuesArray = values.toArray(new Integer[0]);
 				valuesArray[1] = noun;
 				valuesArray[2] = verb;
@@ -40,19 +45,12 @@ public class Day2 {
 						break;
 					}
 				}
-				System.out.println(valuesArray[0]);
-				if (valuesArray[0] == 19690720) {
+				if (valuesArray[0] == OUTPUT_TO_FIND) {
 					int anwser = 100 * noun + verb;
 					System.out.println("anwser " + anwser);
-					noun = 99;
-					verb = 99;
+					noun = NOUN_MAX;
+					verb = VERB_MAX;
 				}
-				if (valuesArray[0] > 19690720) {
-					System.out.println("too high");
-					noun = 99;
-					verb = 99;
-				}
-
 			}
 		}
 	}
